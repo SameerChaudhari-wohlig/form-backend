@@ -1,0 +1,39 @@
+   <!-- Example single danger button -->
+    <div class="btn-group ">
+        <button type="button" class="btn btn-danger dropdown-toggle mx-5" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            ID 
+        </button>
+        <button type="button" class="btn btn-primary dropdown-toggle mx-5" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            User Name
+        </button>
+        <button type="button" class="btn btn-secondary dropdown-toggle mx-5" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Age
+        </button>
+        <button type="button" class="btn btn-success dropdown-toggle mx-5" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Gender
+        </button>
+        <button type="button" class="btn btn-info dropdown-toggle mx-5" data-bs-toggle="dropdown" aria-expanded="false">
+            Ranking
+        </button>
+        <button type="button" class="btn btn-warning dropdown-toggle mx-5" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Subject
+        </button>
+
+        <ul class="dropdown-menu ">
+            <li v-for="Product in Products" :key="Product.id"><a class="dropdown-item" href="#">{{ Product.id }}</a>
+            </li>
+            <li v-for="Product in Products" :key="Product.id"><a class="dropdown-item" href="#">{{ Product.name }}</a>
+            </li>
+            <li v-for="Product in Products" :key="Product.id"><a class="dropdown-item" href="#">{{ Product.age }}</a>
+            </li>
+            <li v-for="Product in Products" :key="Product.id">
+                <hr class="dropdown-divider">{{ Product.gender }}
+            </li>
+            <li v-for="Product in Products" :key="Product.id"><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+    </div>
