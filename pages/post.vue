@@ -1,7 +1,7 @@
 <template>
     <h3 class="text-center mt-3 text-primary">Enter User Details</h3>
     <div class="d-flex justify-content-center mt-3 ">
-        <form class="col-3 d-flex flex-column border border-primary rounded p-3">
+        <form class="col-lg-3 col-md-7 d-flex flex-column border border-primary rounded p-3">
             <div class="mb-3">
                 <label for="exampleInputName" class="form-label">Name</label>
                 <input type="name" v-model="name" class="form-control" id="exampleInputName"

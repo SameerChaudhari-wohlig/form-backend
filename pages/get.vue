@@ -6,28 +6,28 @@
       <v-text-field class="pad" size="1" rounded placeholder="Search" v-model="name"><v-btn icon="mdi-magnify"></v-btn>
       </v-text-field>
     </v-app-bar>
-    <!-- <pre>{{ Products }}</pre> -->
+    <!-- <pre>{{ posts }}</pre> -->
     <v-main class="my-8">
       <table class="table caption-top">
 
         <thead>
           <tr class="table-primary">
-            <th scope="col" >ID</th>
+            <!-- <th scope="col" >ID</th> -->
             <th scope="col">Name</th>
             <th scope="col">Age</th>
-            <th scope="col">BloodGroup</th>
+            <!-- <th scope="col">BloodGroup</th> -->
             <th scope="col">Gender</th>
-            <th scope="col">Subject</th>
-            <th scope="col">ranking</th>
+            <!-- <th scope="col">Subject</th> -->
+            <!-- <th scope="col">ranking</th> -->
           </tr>
-          <tr class="table-info" v-for="Product in Products" :key="Product.id">
-            <td >{{ Product.id }}</td>
-            <td>{{ Product.name }}</td>
-            <td>{{ Product.age }}</td>
-            <td>{{ Product.Bloodgroup }}</td>
-            <td>{{ Product.gender }}</td>
-            <td>{{ Product.subject }}</td>
-            <td>{{ Product.ranking }}</td>
+          <tr class="table-info" v-for="post in posts" :key="post.id">
+            <!-- <td >{{ Product.id }}</td> -->
+            <td>{{ post.name }}</td>
+            <td>{{ post.age }}</td>
+            <!-- <td>{{ Product.Bloodgroup }}</td> -->
+            <td>{{ post.gender }}</td>
+            <!-- <td>{{ Product.subject }}</td> -->
+            <!-- <td>{{ Product.ranking }}</td> -->
           </tr>
         </thead>
       </table>
@@ -57,7 +57,14 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import data from "../data";
-const Products = ref(data);
+// import { ref } from "vue";
+// import data from "../data";
+// const Products = ref(data);
+
+const url = "http://localhost:3001/student"
+
+let posts = ref([]);
+const { data } = await useFetch(url);
+posts = data;
+
 </script>
